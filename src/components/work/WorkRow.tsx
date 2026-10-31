@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { CSSProperties } from "react";
 import type { Work } from "@/content/works";
 
-/** A selected work on the home page, linking to its own page. */
+/** A selected work on the home page, with a "See more" pill on the capture. */
 export function WorkRow({ work, index }: { work: Work; index: number }) {
   return (
     <li>
@@ -37,6 +37,9 @@ export function WorkRow({ work, index }: { work: Work; index: number }) {
             // eslint-disable-next-line @next/next/no-img-element -- small static brand mark
             <img className="work-row-logo" src={work.logo} alt="" width={96} height={96} />
           ) : null}
+          <span className="work-row-more" aria-hidden="true">
+            See more →
+          </span>
         </div>
       </Link>
     </li>
