@@ -10,12 +10,11 @@ export const site = {
   name: "André Esteves",
   role: "Senior software engineer and founder of Horaizen",
   status: "Open to new roles and projects",
-  headline: ["Hi, I'm André", "I make complicated things feel simple"],
-  intro: "Software engineer and founder of Horaizen.",
+  /** First line muted, second line strong */
+  headline: ["Behind every simple screen", "is a hard problem, solved"],
   facts: [
-    { label: "Now", value: "Founder, Horaizen" },
-    { label: "Before", value: "KAYAK, Berlin" },
-    { label: "Based", value: "Portugal" },
+    { label: "Years of experience", value: "5+ years" },
+    { label: "Specialized", value: "Senior Software Engineer" },
   ],
   description:
     "André Esteves is a senior software engineer and the founder of Horaizen, building Horaizen Experiences, the booking system for yacht owners in Portugal. Previously product engineering on KAYAK Trips and KAYAK for Business.",

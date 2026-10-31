@@ -274,6 +274,8 @@
   .nav[data-over="true"] {
     --bg: #0b0b0c;
     --bg-subtle: rgb(255 255 255 / 0.1);
+    --surface: rgb(255 255 255 / 0.12);
+    --surface-hover: rgb(255 255 255 / 0.18);
     --border: rgb(255 255 255 / 0.2);
     --fg: #f4f4f5;
     --fg-muted: #c4c4cc;
@@ -487,6 +489,7 @@
     --border: rgb(255 255 255 / 0.16);
     --fg: #f4f4f5;
     --fg-muted: #c4c4cc;
+    --fg-faint: rgb(244 244 245 / 0.55);
     --primary: #f4f4f5;
     --on-primary: #0b0b0c;
     position: relative;
@@ -550,7 +553,7 @@
 
   .hero-title {
     max-width: 11.5em;
-    font-size: clamp(3rem, 7.2vw, 6rem);
+    font-size: clamp(2.5rem, 5.6vw, 4.5rem);
     text-wrap: balance;
     font-weight: 500;
     line-height: 0.98;
@@ -590,9 +593,10 @@
   .hero-facts {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px 56px;
+    justify-content: space-between;
+    gap: 20px 40px;
     align-self: stretch;
-    margin-top: clamp(56px, 8vw, 96px);
+    margin-top: clamp(32px, 4vw, 48px);
     padding-top: 24px;
     border-top: 1px solid var(--border);
   }
@@ -604,6 +608,42 @@
 
   .hero-facts dd {
     margin-top: 6px;
+    font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: clamp(16px, 3vw, 32px);
+    left: 50%;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    margin-left: -22px;
+    border-radius: 999px;
+    color: var(--fg);
+  }
+
+  .hero-scroll svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-scroll svg {
+      animation: hero-bounce 1.8s var(--ease) infinite;
+    }
+  }
+
+  @keyframes hero-bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(8px);
+    }
   }
 
   .hero-visual {
@@ -1142,8 +1182,12 @@
   /* About */
 
   .about-frame {
-    padding-block: clamp(56px, 7vw, 96px);
-    border-block: 1px solid var(--border);
+    padding-block: 0 clamp(56px, 7vw, 96px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .about-section {
+    padding-top: clamp(56px, 7vw, 96px);
   }
 
   .about,
@@ -1505,6 +1549,13 @@
 @layer components {
   .work-section {
     padding-top: clamp(32px, 4vw, 56px);
+    padding-bottom: 0;
+  }
+
+  /* Line between Selected works and Experience, aligned to the page grid */
+  .work-section .work-list {
+    padding-bottom: clamp(88px, 11vw, 144px);
+    border-bottom: 1px solid var(--border);
   }
 
   .work-list {
