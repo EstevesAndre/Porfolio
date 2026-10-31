@@ -613,7 +613,7 @@
 
   .hero-scroll {
     position: absolute;
-    bottom: clamp(16px, 3vw, 32px);
+    bottom: clamp(4px, 1vw, 12px);
     left: 50%;
     display: grid;
     place-items: center;
