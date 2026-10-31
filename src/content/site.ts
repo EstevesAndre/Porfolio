@@ -20,7 +20,7 @@ export const site = {
     "André Esteves is a senior software engineer and the founder of Horaizen, building Horaizen Experiences, the booking system for yacht owners in Portugal. Previously product engineering on KAYAK Trips and KAYAK for Business.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   /** Public contact address. */
-  email: "andre@horaizen.eu",
+  email: "andreesteves111@gmail.com",
   year: 2026,
 };
 
